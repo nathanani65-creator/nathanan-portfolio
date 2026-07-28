@@ -5,15 +5,15 @@
 
       <div class="about-grid">
         <div class="about-image fade-up">
-          <img src="/images/profile.jpg" alt="Nathanan Insuwan" />
+          <img src="/images/nathanan.jpg" alt="Nathanan Insuwan" />
         </div>
 
         <div class="about-content fade-up">
-          <p class="intro">
-            สวัสดีครับ ผม <strong>ณัฐนันท์ อินสุวรรณ์</strong> กำลังศึกษาระดับปริญญาตรี
-            สาขาเทคโนโลยีสารสนเทศ มหาวิทยาลัยนเรศวร
-          </p>
-
+         <p class="intro">
+          สวัสดีค่ะ ชื่อ <strong>ณัฐนันท์ อินสุวรรณ์</strong> กำลังศึกษาระดับปริญญาตรี คณะวิทยาศาสตร์
+            สาขาเทคโนโลยีสารสนเทศ มหาวิทยาลัยนเรศวร มีความสนใจด้าน Full Stack Web Development และ UX/UI Design 
+            ชื่นชอบการออกแบบและพัฒนาระบบที่มีประสิทธิภาพ ใช้งานง่าย และมอบประสบการณ์ที่ดีแก่ผู้ใช้ พร้อมเรียนรู้เทคโนโลยีใหม่ ๆ 
+             และพัฒนาทักษะอย่างต่อเนื่องเพื่อเตรียมความพร้อมสำหรับการทำงานในสายอาชีพด้านไอที </p>
           <div class="interests">
             <span v-for="i in interests" :key="i" class="tag">✔ {{ i }}</span>
           </div>
@@ -37,7 +37,7 @@ const interests = ['Web Development', 'Frontend', 'Backend', 'UI/UX']
 
 const info = [
   { label: 'Name', value: 'Nathanan Insuwan' },
-  { label: 'Age', value: '—' },
+  { label: 'GPAX', value: '3.06' },
   { label: 'University', value: 'Naresuan University' },
   { label: 'Major', value: 'Information Technology' },
   { label: 'Location', value: 'Phitsanulok, Thailand' },

@@ -1,38 +1,36 @@
 <template>
-  <main class="section detail" v-if="project">
+  <main class="section detail" v-if="item">
     <div class="container">
-      <router-link to="/#projects" class="back">← Back to Projects</router-link>
+      <router-link to="/#experience" class="back">← Back to Experience</router-link>
 
-      <h1 class="title">{{ project.title }}</h1>
-      <p class="subtitle">{{ project.summary }}</p>
+      <span class="year">{{ item.year }}</span>
+      <h1 class="title">{{ item.title }}</h1>
+      <p class="subtitle">{{ item.org }}</p>
+
       <div class="tags">
-        <span v-for="t in project.tech" :key="t" class="tag">{{ t }}</span>
+        <span v-for="t in item.tags" :key="t" class="tag">{{ t }}</span>
       </div>
 
-      <div v-if="project.gallery.length === 1" class="single-image">
-        <img
-          :src="project.gallery[0]"
-          :alt="project.title"
-          @error="onImgError"
-        />
+      <div v-if="item.gallery.length === 1" class="single-image">
+        <img :src="item.gallery[0]" :alt="item.title" @error="onImgError" />
       </div>
 
       <div v-else class="carousel">
         <div class="carousel-viewport">
           <img
-            :src="project.gallery[current]"
-            :alt="`${project.title} screenshot ${current + 1}`"
+            :src="item.gallery[current]"
+            :alt="`${item.title} screenshot ${current + 1}`"
             @error="onImgError"
           />
 
           <button class="nav prev" @click="prevImage" aria-label="Previous image">‹</button>
           <button class="nav next" @click="nextImage" aria-label="Next image">›</button>
-          <span class="counter">{{ current + 1 }} / {{ project.gallery.length }}</span>
+          <span class="counter">{{ current + 1 }} / {{ item.gallery.length }}</span>
         </div>
 
         <div class="dots">
           <button
-            v-for="(img, i) in project.gallery"
+            v-for="(img, i) in item.gallery"
             :key="i"
             class="dot"
             :class="{ active: i === current }"
@@ -42,51 +40,25 @@
         </div>
       </div>
 
-      <a
-        v-if="project.pdf"
-        :href="project.pdf"
-        target="_blank"
-        rel="noopener"
-        class="card pdf-link"
-      >
-        <span class="pdf-icon">📄</span>
-        <div class="pdf-text">
-          <strong>เอกสารโครงงานฉบับเต็ม (PDF)</strong>
-          <span>คลิกเพื่อเปิด / ดาวน์โหลด</span>
-        </div>
-        <span class="pdf-arrow">↗</span>
-      </a>
-
-      <div class="actions">
-        <a v-if="project.demoUrl" :href="project.demoUrl" target="_blank" rel="noopener" class="btn btn-primary">
-          Live Demo
-        </a>
-        <a v-if="project.githubUrl" :href="project.githubUrl" target="_blank" rel="noopener" class="btn btn-outline">
-          GitHub
-        </a>
-      </div>
-    </div>
-
       <div class="content-grid">
         <div class="card block">
-          <h3>รายละเอียด</h3>
-          <p>{{ project.details }}</p>
+          <h3>รายละเอียดกิจกรรม</h3>
+          <p>{{ item.description }}</p>
         </div>
 
         <div class="card block">
-          <h3>สิ่งที่เรียนรู้</h3>
+          <h3>สิ่งที่ได้รับ</h3>
           <ul>
-            <li v-for="(l, i) in project.learned" :key="i">{{ l }}</li>
+            <li v-for="(g, i) in item.gained" :key="i">{{ g }}</li>
           </ul>
         </div>
       </div>
-
-      
+    </div>
   </main>
 
   <main v-else class="section">
     <div class="container">
-      <p>ไม่พบโปรเจกต์นี้</p>
+      <p>ไม่พบข้อมูลนี้</p>
       <router-link to="/" class="btn btn-outline">กลับหน้าแรก</router-link>
     </div>
   </main>
@@ -94,13 +66,13 @@
 
 <script setup>
 import { computed, ref, watch } from 'vue'
-import { getProjectById } from '../data/projects.js'
+import { getExperienceById } from '../data/experience.js'
 
 const props = defineProps({
   id: String,
 })
 
-const project = computed(() => getProjectById(props.id))
+const item = computed(() => getExperienceById(props.id))
 const current = ref(0)
 
 watch(
@@ -111,14 +83,13 @@ watch(
 )
 
 function nextImage() {
-  if (!project.value) return
-  current.value = (current.value + 1) % project.value.gallery.length
+  if (!item.value) return
+  current.value = (current.value + 1) % item.value.gallery.length
 }
 
 function prevImage() {
-  if (!project.value) return
-  current.value =
-    (current.value - 1 + project.value.gallery.length) % project.value.gallery.length
+  if (!item.value) return
+  current.value = (current.value - 1 + item.value.gallery.length) % item.value.gallery.length
 }
 
 function onImgError(e) {
@@ -138,9 +109,24 @@ function onImgError(e) {
   font-weight: 600;
 }
 
+.year {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--secondary);
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
 .title {
   font-size: 2rem;
-  margin-bottom: 14px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--text-dim);
+  margin-bottom: 20px;
 }
 
 .tags {
@@ -155,7 +141,7 @@ function onImgError(e) {
   display: block;
   margin: 0 auto;
   width: 100%;
-  max-width: 500px; /* ← ปรับขนาดรูปเดี่ยวตรงนี้ (px หรือ % ก็ได้) */
+  max-width: 500px;
   height: auto;
   border-radius: var(--radius);
   border: 1px solid var(--card-border);
@@ -168,10 +154,9 @@ function onImgError(e) {
 
 .carousel-viewport {
   position: relative;
-  width: 70%;          /* ปรับได้ เช่น 60%, 70%, 80% */
-  max-width: 600px;    /* กำหนดความกว้างสูงสุด */
-  margin: 0 auto;      /* จัดกึ่งกลาง */
-
+  width: 70%;
+  max-width: 600px;
+  margin: 0 auto;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--card-border);
@@ -254,14 +239,6 @@ function onImgError(e) {
   transform: scale(1.2);
 }
 
-.subtitle {
-  font-size: 1.05rem;
-  color: var(--text-dim);
-  line-height: 1.7;
-  margin-bottom: 20px;
-  max-width: 640px;
-}
-
 @media (max-width: 600px) {
   .carousel-viewport img {
     aspect-ratio: 4 / 3;
@@ -271,37 +248,6 @@ function onImgError(e) {
     height: 36px;
     font-size: 1.3rem;
   }
-}
-
-.pdf-link {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 18px 22px;
-  margin-bottom: 36px;
-  text-decoration: none;
-  color: var(--text);
-}
-
-.pdf-icon {
-  font-size: 1.8rem;
-}
-
-.pdf-text {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.pdf-text span {
-  color: var(--text-dim);
-  font-size: 0.85rem;
-}
-
-.pdf-arrow {
-  font-size: 1.2rem;
-  color: var(--secondary);
 }
 
 .content-grid {
@@ -328,12 +274,6 @@ function onImgError(e) {
   padding-left: 20px;
   color: var(--text-dim);
   line-height: 1.9;
-}
-
-.actions {
-  display: flex;
-  gap: 14px;
-  margin-bottom: 36px;
 }
 
 @media (max-width: 760px) {

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import ProjectDetail from '../views/ProjectDetail.vue'
+import ExperienceDetail from '../views/ExperienceDetail.vue'
 import NotFound from '../views/NotFound.vue'
 
 const router = createRouter({
@@ -8,6 +9,7 @@ const router = createRouter({
   routes: [
     { path: '/', name: 'home', component: Home },
     { path: '/projects/:id', name: 'project-detail', component: ProjectDetail, props: true },
+    { path: '/experience/:id', name: 'experience-detail', component: ExperienceDetail, props: true },
     { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound },
   ],
   scrollBehavior(to, from, savedPosition) {

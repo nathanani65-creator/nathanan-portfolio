@@ -18,6 +18,9 @@
             <div class="tags">
               <span v-for="t in item.tags" :key="t" class="tag">{{ t }}</span>
             </div>
+            <router-link :to="`/experience/${item.id}`" class="btn btn-primary btn-sm">
+              View Details
+            </router-link>
           </div>
         </div>
       </div>
@@ -93,5 +96,14 @@ import { experience } from '../data/experience.js'
   font-size: 0.9rem;
   line-height: 1.7;
   margin-bottom: 12px;
+}
+
+.tags {
+  margin-bottom: 16px;
+}
+
+.btn-sm {
+  padding: 9px 18px;
+  font-size: 0.85rem;
 }
 </style>

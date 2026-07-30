@@ -5,7 +5,7 @@
 
     <div class="container hero-inner">
       <div class="avatar fade-up">
-        <img src="/images/profile.jpg" alt="Nathanan Insuwan" @error="onImgError" />
+        <img src="/images/nathanan.jpg" alt="Nathanan Insuwan" @error="onImgError" />
       </div>
 
       <p class="fade-up hi">Hi, I'm</p>

@@ -1,35 +1,72 @@
 export const skillGroups = [
   {
+    title: 'Languages',
+    icon: '💻',
+    skills: [
+      { name: 'HTML5' },
+      { name: 'CSS3' },
+      { name: 'JavaScript (ES6+)' },
+      { name: 'PHP' },
+    ],
+  },
+  {
     title: 'Frontend',
     icon: '🎨',
     skills: [
-      { name: 'HTML', level: 90 },
-      { name: 'CSS', level: 88 },
-      { name: 'JavaScript', level: 85 },
-      { name: 'Vue', level: 80 },
-      { name: 'Bootstrap', level: 82 },
-      { name: 'Tailwind', level: 78 },
+      { name: 'Vue.js' },
+      { name: 'Bootstrap' },
+      { name: 'Tailwind CSS' },
     ],
   },
   {
     title: 'Backend',
     icon: '⚙️',
     skills: [
-      { name: 'PHP', level: 80 },
-      { name: 'Node.js', level: 72 },
-      { name: 'Express', level: 70 },
-      { name: 'MySQL', level: 78 },
+      { name: 'Node.js' },
+      { name: 'Express.js' },
     ],
   },
   {
-    title: 'Tools',
+    title: 'Database',
+    icon: '🗄️',
+    skills: [
+      { name: 'MySQL' },
+    ],
+  },
+  {
+    title: 'Database Tools',
+    icon: '📊',
+    skills: [
+      { name: 'phpMyAdmin' },
+      { name: 'MySQL Workbench' },
+    ],
+  },
+  {
+    title: 'Development Tools',
     icon: '🛠️',
     skills: [
-      { name: 'Git', level: 85 },
-      { name: 'GitHub', level: 85 },
-      { name: 'VS Code', level: 95 },
-      { name: 'Figma', level: 70 },
-      { name: 'Postman', level: 75 },
+      { name: 'Git' },
+      { name: 'GitHub' },
+      { name: 'VS Code' },
+      { name: 'Postman' },
+      { name: 'Figma' },
+      { name: 'XAMPP' },
+      { name: 'npm' },
+      { name: 'Vite' },
+    ],
+  },
+  {
+    title: 'AI Tools',
+    icon: '🤖',
+    skills: [
+      { name: 'ChatGPT' },
+      { name: 'GitHub Copilot' },
+      { name: 'Google Gemini' },
+      { name: 'Claude' },
+      { name: 'Perplexity AI' },
+      { name: 'NotebookLM' },
+      { name: 'Canva AI' },
+      { name: 'Grammarly' },
     ],
   },
 ]

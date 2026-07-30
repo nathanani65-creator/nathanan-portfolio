@@ -44,6 +44,7 @@ function onImgError(e) {
 .thumb {
   aspect-ratio: 16/10;
   background: linear-gradient(135deg, var(--card), var(--bg-alt));
+  overflow: hidden;
 }
 
 .thumb img {

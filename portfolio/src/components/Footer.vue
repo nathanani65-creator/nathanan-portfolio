@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="container">
       <p>Nathanan Insuwan</p>
-      <p class="dim">© {{ year }} · Made with Vue ❤️</p>
+      <p class="dim">© {{ year }} · Always Learning • Always Building ❤️</p>
     </div>
   </footer>
 </template>

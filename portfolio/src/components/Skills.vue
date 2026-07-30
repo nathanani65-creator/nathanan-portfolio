@@ -24,14 +24,19 @@ import { skillGroups } from '../data/skills.js'
 
 <style scoped>
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  column-count: 3;
+  column-gap: 24px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .skills-grid {
-    grid-template-columns: 1fr;
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-grid {
+    column-count: 1;
   }
 }
 </style>

@@ -2,7 +2,7 @@
   <section id="contact" class="section section-alt">
     <div class="container contact-grid">
       <div class="info-side">
-        <SectionTitle eyebrow="Let's talk" title="Contact" subtitle="ยินดีพูดคุยเรื่องงาน โปรเจกต์ หรือโอกาสความร่วมมือครับ" />
+        <SectionTitle eyebrow="Let's talk" title="Contact" subtitle="กำลังมองหาโอกาสฝึกงาน พร้อมเรียนรู้ พัฒนาทักษะ และร่วมสร้างผลงานกับทีม" />
 
         <ul class="contact-list">
           <li v-for="c in contacts" :key="c.label">
@@ -41,11 +41,10 @@ import { ref } from 'vue'
 import SectionTitle from './SectionTitle.vue'
 
 const contacts = [
-  { icon: '✉️', label: 'Email', value: 'example@email.com', href: 'mailto:example@email.com' },
-  { icon: '💻', label: 'GitHub', value: 'github.com/yourname', href: 'https://github.com/' },
+  { icon: '✉️', label: 'Email', value: 'nathanani65@nu.ac.th', href: 'mailto:nathanani65@nu.ac.th' },
+  { icon: '💻', label: 'GitHub', value: 'github.com', href: 'https://github.com/nathanani65-creator/nathanan-portfolio.git' },
   { icon: '🔗', label: 'LinkedIn', value: 'linkedin.com/in/yourname', href: 'https://linkedin.com/' },
-  { icon: '📘', label: 'Facebook', value: 'facebook.com/yourname', href: 'https://facebook.com/' },
-  { icon: '📱', label: 'Phone', value: '+66 xx-xxx-xxxx', href: 'tel:+66xxxxxxxxx' },
+  { icon: '📱', label: 'Phone', value: '099-246-2813',  },
 ]
 
 const form = ref({ name: '', email: '', message: '' })

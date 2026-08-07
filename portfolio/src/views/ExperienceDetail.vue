@@ -11,11 +11,11 @@
         <span v-for="t in item.tags" :key="t" class="tag">{{ t }}</span>
       </div>
 
-      <div v-if="item.gallery.length === 1" class="single-image">
+      <div v-if="item.gallery && item.gallery.length === 1" class="single-image">
         <img :src="item.gallery[0]" :alt="item.title" @error="onImgError" />
       </div>
 
-      <div v-else class="carousel">
+      <div v-else-if="item.gallery && item.gallery.length > 1" class="carousel">
         <div class="carousel-viewport">
           <img
             :src="item.gallery[current]"
@@ -40,7 +40,51 @@
         </div>
       </div>
 
-      <div class="content-grid">
+      <p v-if="item.accounts && item.accounts.length" class="overview">{{ item.description }}</p>
+
+      <div v-if="item.accounts && item.accounts.length" class="accounts">
+        <div v-for="(acc, i) in item.accounts" :key="i" class="card account-card">
+          <div class="account-header">
+            <span class="account-role">{{ acc.role }}</span>
+            <h3 class="account-name">{{ acc.name }}</h3>
+          </div>
+
+          <img
+            v-if="acc.image"
+            class="account-image"
+            :src="acc.image"
+            :alt="acc.name"
+            @error="onImgError"
+          />
+
+          <a
+            v-if="acc.link"
+            :href="acc.link"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-outline btn-sm account-link"
+          >
+            🎵 {{ acc.linkLabel }}
+          </a>
+
+          <div class="account-info">
+            <div v-for="info in acc.info" :key="info.label" class="info-row">
+              <span class="info-label">{{ info.label }}</span>
+              <span class="info-value">{{ info.value }}</span>
+            </div>
+          </div>
+
+          <h4>หน้าที่และประสบการณ์ที่ได้รับ</h4>
+          <p class="account-duties">{{ acc.duties }}</p>
+
+          <h4>ทักษะที่ได้รับ</h4>
+          <ul class="account-skills">
+            <li v-for="(s, si) in acc.skills" :key="si">{{ s }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div v-else class="content-grid">
         <div class="card block">
           <h3>รายละเอียดกิจกรรม</h3>
           <p>{{ item.description }}</p>
@@ -248,6 +292,106 @@ function onImgError(e) {
     height: 36px;
     font-size: 1.3rem;
   }
+}
+
+.overview {
+  color: var(--text-dim);
+  line-height: 1.8;
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+
+.accounts {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.account-card {
+  padding: 28px;
+}
+
+.account-header {
+  margin-bottom: 16px;
+}
+
+.account-role {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--secondary);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.account-name {
+  font-size: 1.3rem;
+}
+
+.account-image {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--card-border);
+  background: var(--bg);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.account-link {
+  display: inline-flex;
+  margin-bottom: 20px;
+}
+
+.account-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 14px;
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+}
+
+.info-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+}
+
+.info-value {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.account-card h4 {
+  font-size: 1rem;
+  margin: 20px 0 10px;
+}
+
+.account-duties {
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+.account-skills {
+  padding-left: 20px;
+  color: var(--text-dim);
+  line-height: 1.9;
+}
+
+.btn-sm {
+  padding: 9px 18px;
+  font-size: 0.85rem;
 }
 
 .content-grid {

@@ -52,14 +52,14 @@ const contacts = [
   {
     icon: '💻',
     label: 'GitHub',
-    value: 'github.com/nathanani65-creator',
-    href: 'https://github.com/nathanani65-creator'
+    value: 'github.com',
+    href: 'https://github.com/nathanani65-creator/nathanan-portfolio.git'
   },
   {
     icon: '🔗',
     label: 'LinkedIn',
-    value: 'linkedin.com/in/yourname',
-    href: 'https://linkedin.com/in/yourname'
+    value: 'linkedin.com',
+    href: 'https://www.linkedin.com/in/nathanan-insuwan-049a6040b/'
   },
   {
     icon: '📱',

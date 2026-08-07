@@ -6,7 +6,7 @@ export const projects = [
     image: '/images/research.jpg',
     gallery: ['/images/research.jpg'],
     pdf: '/files/project.pdf',
-    tech: ['Semantic Search','HTML', 'CSS', 'PHP', 'MySQL'],
+    tech: ['Semantic Search'],
     details:
       'พัฒนาระบบเว็บไซต์สำหรับบริหารจัดการและค้นหาหอพักออนไลน์ รอบมหาวิทยาลัยนเรศวร โดยใช้เทคนิค Semantic Search เพื่อช่วยให้ผู้ใช้งานสามารถค้นหาหอพักได้ตรงกับความต้องการมากขึ้น เช่น ราคา ทำเล และสิ่งอำนวยความสะดวกผ่านการค้นหาด้วยภาษาธรรมชาติ',
     learned: [
@@ -42,7 +42,7 @@ export const projects = [
     summary: 'ระบบสั่งของหวานออนไลน์',
     image: '/images/dessert.jpg',
     gallery: ['/images/dessert.jpg'],
-    tech: ['Vue', 'Vite', 'Netlify'],
+    tech: ['Figma', 'Canva', 'UX Research', 'UI Design'],
     pdf: '/files/proj1.pdf',
 
     details:

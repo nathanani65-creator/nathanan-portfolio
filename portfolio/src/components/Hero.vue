@@ -21,9 +21,9 @@
       </div>
 
       <div class="fade-up cta">
-        <a href="/resume.pdf" download class="btn btn-primary">📄 Download Resume</a>
-        <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
-        <a href="mailto:example@email.com" class="btn btn-outline">Email</a>
+        <a href="/files/Resume.pdf" download class="btn btn-primary">📄 Download Resume</a>
+        <a href="https://github.com/nathanani65-creator/nathanan-portfolio.git" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+        <a href="mailto:nathanani65@nu.ac.th" class="btn btn-outline">Email</a>
       </div>
     </div>
   </section>
@@ -32,7 +32,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-const roles = ['Frontend Developer', 'Web Developer', 'Software Developer']
+const roles = ['Frontend Developer', 'Backend Developer', 'UX/UI']
 const activeRole = ref(0)
 let timer
 

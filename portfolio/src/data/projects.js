@@ -21,7 +21,7 @@ export const projects = [
     title: 'BoardQ',
     summary: 'ระบบจองคิวบอร์ดเกมออนไลน์',
     image: '/images/boardq4.png',
-    gallery: ['/images/boardq4.png','/images/boardq1.png','/images/boardq2.png','/images/boardq3.png'],
+    gallery: ['/images/boardq4.png', '/images/boardq1.png', '/images/boardq2.png', '/images/boardq3.png'],
     demoUrl: 'https://board-q.vercel.app/',
     githubUrl: 'https://github.com/nathanani65-creator/BoardQ.git',
     tech: ['Vue', 'Node', 'MySQL'],
@@ -33,7 +33,7 @@ export const projects = [
       'ฝึกการออกแบบ UI/UX และ Responsive Design',
       'เรียนรู้การทำงานเชื่อมต่อระหว่าง Frontend และ Backend',
       'ฝึกการจัดการโครงสร้างโปรเจกต์และการทำงานร่วมกันผ่าน Git/GitHub',
-    
+
     ],
   },
   {
@@ -63,7 +63,7 @@ export const projects = [
     title: 'HangOut',
     summary: 'เว็บไซต์ HangOut พิษณุโลก',
     image: '/images/hangout.jpg',
-    gallery: ['/images/hangout.jpg','/images/hangout1.png','/images/hangout2.png','/images/hangout3.png'],
+    gallery: ['/images/hangout.jpg', '/images/hangout1.png', '/images/hangout2.png', '/images/hangout3.png'],
     tech: ['HTML5', 'CSS3', 'JavaScript'],
     demoUrl: 'https://hangoutphs.netlify.app/',
     details:
@@ -72,7 +72,7 @@ export const projects = [
       'พัฒนาทักษะด้าน Front-End Web Development',
       'เรียนรู้กระบวนการออกแบบและพัฒนาเว็บไซต์ตั้งแต่เริ่มต้นจนเผยแพร่ใช้งานจริง',
       'ฝึกการวางแผนและจัดการโครงสร้างข้อมูลบนเว็บไซต์',
-      
+
     ],
   },
 
@@ -81,7 +81,7 @@ export const projects = [
     title: 'Vocab Notebook',
     summary: 'เว็บสมุดจดคำศัพท์ออนไลน์',
     image: '/images/vocab.png',
-    gallery: ['/images/vocab.png','/images/vocab1.png','/images/vocab2.png','/images/vocab3.png'],
+    gallery: ['/images/vocab.png', '/images/vocab1.png', '/images/vocab2.png', '/images/vocab3.png'],
     tech: ['HTML5', 'CSS3', 'JavaScript'],
     demoUrl: 'https://vocabnotebookbymook.netlify.app/',
     details:
@@ -93,8 +93,31 @@ export const projects = [
       'ออกแบบตรรกะการทบทวนคำศัพท์ทั้งสองรูปแบบ (Thai → English และ English → Thai)',
       'พัฒนา UI ที่ใช้งานง่ายและรองรับการเรียนรู้ด้วยตนเอง',
       'ฝึกการคิดและแก้ปัญหาในการพัฒนาระบบจากความต้องการของผู้ใช้งานจริง',
-      
-      
+
+
+    ],
+  },
+
+  {
+    id: 'Booknest',
+    title: 'Booknest',
+    summary: 'เว็บไซต์สำหรับจัดการคลังหนังสือออนไลน์',
+    image: '/images/booknest1.png',
+    gallery: ['/images/booknest1.png', '/images/booknest2.png', '/images/booknest3.png'],
+    tech: ['HTML5', 'CSS3', 'JavaScript'],
+    demoUrl: 'https://nubookneststor.netlify.app/#',
+    details:
+      'เว็บไซต์สำหรับค้นหาและยืมหนังสือออนไลน์ ผู้ใช้สามารถค้นหาและเลือกดูหนังสือตามหมวดหมู่ ตรวจสอบรายละเอียดหนังสือ เลือกระยะเวลาการยืม และกรอกข้อมูลเพื่อทำรายการยืมได้ พร้อมหน้าคำแนะนำการยืม–คืนและรายละเอียดการยืมหนังสือ',
+    learned: [
+      'ออกแบบและพัฒนาเว็บไซต์ยืมหนังสือออนไลน์ด้วย HTML5, CSS3 และ JavaScript',
+      'ออกแบบหน้าแสดงรายการหนังสือและรายละเอียดของหนังสือแต่ละเล่ม',
+      'พัฒนาระบบค้นหาและกรองหนังสือตามหมวดหมู่',
+      'พัฒนาฟอร์มสำหรับกรอกข้อมูลและเลือกระยะเวลาในการยืมหนังสือ',
+      'ออกแบบขั้นตอนการใช้งานระบบยืม–คืนหนังสือให้เข้าใจง่าย',
+      'พัฒนา Responsive Web Design เพื่อรองรับการแสดงผลบนอุปกรณ์ต่าง ๆ',
+      'ฝึกใช้ JavaScript ในการควบคุมการทำงานและการโต้ตอบภายในเว็บไซต์'
+
+
     ],
   },
 ]

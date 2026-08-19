@@ -21,7 +21,7 @@
       </div>
 
       <div class="fade-up cta">
-        <a href="/files/Resume.pdf" download class="btn btn-primary">📄 Download Resume</a>
+        <a href="/files/resume_Betask.pdf" download class="btn btn-primary">📄 Download Resume</a>
         <a href="https://github.com/nathanani65-creator/nathanan-portfolio.git" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
         <a href="mailto:nathanani65@nu.ac.th" class="btn btn-outline">Email</a>
       </div>
